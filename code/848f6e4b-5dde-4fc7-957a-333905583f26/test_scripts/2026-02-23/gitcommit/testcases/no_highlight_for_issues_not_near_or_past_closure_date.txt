@@ -1,0 +1,47 @@
+Test Case Title: No Highlight for Issues Not Near or Past Closure Date
+------------------------------------------------------------
+
+{
+    "id": "TC-US-005-03",
+    "description": "Ensure that issues with closure dates not approaching or overdue are not highlighted.",
+    "requirement_id": "US-005",
+    "type": "negative",
+    "priority": "P1",
+    "risk_level": "medium",
+    "preconditions": [
+        "User is logged in as an Auditee.",
+        "Dashboard contains issues with closure dates more than the 'approaching' threshold in the future."
+    ],
+    "steps": [
+        "Navigate to the dashboard.",
+        "Identify issues with closure dates greater than the 'approaching' threshold (e.g., today + 15 days)."
+    ],
+    "expected_outcomes": [
+        "Issues not approaching or overdue are not highlighted."
+    ],
+    "data": {
+        "inputs": {},
+        "fixtures": [
+            "Issue_D: closure_date = today + 15 days"
+        ],
+        "mocks": []
+    },
+    "tags": [
+        "UI",
+        "visual",
+        "highlight",
+        "negative"
+    ],
+    "traceability": {
+        "acceptance_criteria_refs": [
+            "Issues approaching closure date are highlighted according to defined rules.",
+            "Overdue issues are distinctly highlighted."
+        ],
+        "nfr_refs": [],
+        "owasp_asvs": [],
+        "wcag": []
+    },
+    "automation_candidate": true,
+    "estimated_duration_sec": 45,
+    "notes": "Tests that only qualifying issues are highlighted."
+}
